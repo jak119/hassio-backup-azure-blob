@@ -1,0 +1,18 @@
+{
+  "name": "Backup Azure Blob",
+  "version": "1.0",
+  "slug": "backup_azure_blob",
+  "description": "Backup config to Azure blob container",
+  "startup": "once",
+  "boot": "auto",
+  "options": {
+    "connectionstring": "",
+    "containername": ""
+  },
+  "schema": {
+    "connectionstring": "password",
+    "containername": "str"
+  },
+  "map": ["backup:ro"],
+  "arch": ["amd64", "armv7", "armhf", "i386" , "aarch64"]
+}
