@@ -1,8 +1,8 @@
 {
-  "name": "Backup Azure Blob",
+  "name": "Backup to Azure Blob",
   "version": "1.0",
   "slug": "backup_azure_blob",
-  "description": "Backup config to Azure blob container",
+  "description": "Container to copy Hassio backups to an Azure Storage Account",
   "startup": "once",
   "boot": "auto",
   "options": {
