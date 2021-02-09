@@ -5,6 +5,7 @@
   "description": "Container to copy Hassio backups to an Azure Storage Account",
   "startup": "once",
   "boot": "auto",
+  "image": "jamisonkissh/{arch}-hassio-azure-backup",
   "options": {
     "connectionstring": "",
     "containername": ""
