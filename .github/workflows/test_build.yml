@@ -1,7 +1,11 @@
 name: 'Test Build'
 
 # on: [push, pull_request, workflow_dispatch]
-on: [workflow_dispatch]
+on: 
+  workflow_dispatch:
+  push:
+    branches-ignore: 
+      - main
 
 jobs:
   build:
@@ -16,4 +20,6 @@ jobs:
         args: |
           --test \
           --all \
-          --docker-hub jamisonkissh
+          --target . \
+          --docker-hub jamisonkissh \
+          --image {arch}-hassio-azure-backup
