@@ -1,6 +1,6 @@
 # Backup to Azure Blob
 
-A Hassio Add-on that's designed to start up and copy Hassio snapshots to an Azure Storage Account. This container can be called periodically via Home Assistant Automation and / or used in combination with [Hass Auto Backup](https://github.com/jcwillox/hass-auto-backup).
+A Hassio Add-on that's designed to start up and copy Hassio snapshots to an Azure Storage Account. This container can be called periodically via Home Assistant Automation and / or used in combination with [Hass Auto Backup](https://github.com/jcwillox/hass-auto-backup). See [docs.md](DOCS.md) for more info on installing and configuring.
 
 ## Prerequisites
 
