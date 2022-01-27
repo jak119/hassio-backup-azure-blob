@@ -6,7 +6,7 @@ ENV LANG C.UTF-8
 RUN \
   apk update && \
   apk add python3 bash py-pip && \
-  apk add --virtual=build gcc libffi-dev musl-dev openssl-dev python3-dev make && \
+  apk add --virtual=build gcc libffi-dev musl-dev openssl-dev python3-dev make cargo && \
   pip3 install --upgrade pip && \
   pip3 --no-cache-dir install azure-cli && \
   apk del --purge build

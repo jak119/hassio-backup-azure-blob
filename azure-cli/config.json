@@ -1,12 +1,11 @@
 {
   "name": "Backup to Azure Blob",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "slug": "backup_azure_blob",
   "description": "Container to copy Hassio backups to an Azure Storage Account",
   "url": "https://github.com/jak119/hassio-backup-azure-blob",
   "startup": "once",
-  "boot": "auto",
-  "image": "jamisonkissh/{arch}-hassio-azure-backup",
+  "image": "ghcr.io/jak119/{arch}-hassio-azure-backup",
   "options": {
     "connectionstring": "",
     "containername": ""
