@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.0
+
+Add timeout_value parameter
+
 ## 1.0.3
 
 Update repo structure
