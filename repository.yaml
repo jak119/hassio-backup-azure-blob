@@ -1,0 +1,3 @@
+# https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
+name: Azure Backup
+url: 'https://github.com/jak119/hassio-backup-azure-blob'
