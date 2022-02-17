@@ -1,0 +1,30 @@
+name: Backup to Azure Blob with Restic
+version: 0.0.1
+stage: experimental
+slug: restic_azure
+description: Container to copy Hassio backups to an Azure Storage Account with Restic
+url: https://github.com/jak119/hassio-backup-azure-blob/tree/main/restic
+startup: once
+image: ghcr.io/jak119/{arch}-hassio-azure-backup-restic
+options:
+  storageaccount: null
+  key: null
+  containername: null
+  folder: null
+  repopassword: null
+  days_to_keep: 90
+schema:
+  storageaccount: str
+  key: password
+  containername: str
+  folder: str?
+  repopassword: password
+  days_to_keep: int
+map:
+- backup:ro
+arch:
+- amd64
+- armv7
+- armhf
+- i386
+- aarch64
