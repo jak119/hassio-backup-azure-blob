@@ -12,21 +12,28 @@ RESTIC_REPOSITORY="azure:"${CONTAINER}":/"${FOLDER}
 function initializeRepository() {
     # Inspired by https://github.com/PHLAK/restic-init/
     if restic -p ./password.txt --no-cache --repo ${RESTIC_REPOSITORY} snapshots &> /dev/null; then
-        echo "Respository already intialized at ${RESTIC_REPOSITORY}"
+        bashio::log.green "Respository already intialized at ${RESTIC_REPOSITORY}"
         return 0
     fi
 
-    echo -n "Initializaing repository at ${RESTIC_REPOSITORY} ... "
+    bashio::log "Checking repo password"
+    bashio::pwned.is_safe_password($(bashio::config 'repopassword'))
+
+    bashio::log "Initializaing repository at ${RESTIC_REPOSITORY} ... "
     restic -p ./password.txt init --repo ${RESTIC_REPOSITORY} > /dev/null
-    echo "DONE"
+    bashio::log.green "Initialized repo"
 }
 
 function runBackup() {
+    bashio::log "Starting backup"
     restic -p ./password.txt --repo ${RESTIC_REPOSITORY} backup /backup/
+    bashio::log.green "Backup completed"
 }
 
 function pruneOldBackups() {
+    bashio::log "Pruning old backups"
     restic -p ./password.txt --repo ${RESTIC_REPOSITORY} --keep-daily "$(bashio::config 'days_to_keep')"
+    bashio::log.green "Pruning completed"
 }
 
 # Create a password file
@@ -40,3 +47,6 @@ runBackup
 
 # Cleanup old snapshots
 pruneOldBackups
+
+# Exit the script nicely
+bashio::exit.ok
