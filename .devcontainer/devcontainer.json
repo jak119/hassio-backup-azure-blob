@@ -7,7 +7,7 @@
   "containerEnv": {
     "WORKSPACE_DIRECTORY": "${containerWorkspaceFolder}"
   },
-  "extensions": ["timonwong.shellcheck", "esbenp.prettier-vscode"],
+  "extensions": ["timonwong.shellcheck", "esbenp.prettier-vscode", "eamodio.gitlens"],
   "mounts": [ "type=volume,target=/var/lib/docker" ],
   "settings": {
     "terminal.integrated.profiles.linux": {
