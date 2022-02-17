@@ -11,12 +11,14 @@ options:
   key: null
   containername: null
   folder: null
+  repopassword: null
   days_to_keep: 90
 schema:
   storageaccount: str
   key: password
   containername: str
   folder: str?
+  repopassword: password
   days_to_keep: int
 map:
 - backup:ro
