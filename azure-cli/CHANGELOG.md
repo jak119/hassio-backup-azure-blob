@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.1.3
+## 1.1.2
 
 Add timeout_value parameter and actually make it work
 
