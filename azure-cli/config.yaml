@@ -1,23 +1,23 @@
 name: Backup to Azure Blob
-version: 1.1.1
+version: 1.1.2
 slug: backup_azure_blob
 description: Container to copy Hassio backups to an Azure Storage Account
 url: https://github.com/jak119/hassio-backup-azure-blob/tree/main/azure-cli
 startup: once
 image: ghcr.io/jak119/{arch}-hassio-azure-backup
 options:
-  connectionstring: ''
-  containername: ''
+  connectionstring: ""
+  containername: ""
   timeout_value: null
 schema:
   connectionstring: password
   containername: str
   timeout_value: int?
 map:
-- backup:ro
+  - backup:ro
 arch:
-- amd64
-- armv7
-- armhf
-- i386
-- aarch64
+  - amd64
+  - armv7
+  - armhf
+  - i386
+  - aarch64

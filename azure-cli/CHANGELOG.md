@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.3
+
+Add timeout_value parameter and actually make it work
+
 ## 1.1.1
 
 Remove broken timeout logic for now
