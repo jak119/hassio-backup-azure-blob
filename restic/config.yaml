@@ -17,7 +17,7 @@ schema:
   storageaccount: "str"
   key: "password"
   containername: "str"
-  folder: "str?"
+  folder: "match(^[^/].*)?"
   repopassword: "password"
   days_to_keep: "int"
 map:
