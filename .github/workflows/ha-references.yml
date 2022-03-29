@@ -10,16 +10,16 @@ jobs:
 
     steps:
       - name: Checkout this repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           path: addon
       - name: Checkout the Devcontainer repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: home-assistant/devcontainer
           path: devcontainer
       - name: Checkout the addons-example repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: home-assistant/addons-example
           path: addons-example
