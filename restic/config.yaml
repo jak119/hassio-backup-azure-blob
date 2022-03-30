@@ -7,11 +7,6 @@ url: https://github.com/jak119/hassio-backup-azure-blob/tree/main/restic
 startup: once
 image: ghcr.io/jak119/{arch}-hassio-azure-backup-restic
 options:
-  storageaccount: null
-  key: null
-  containername: null
-  folder: null
-  repopassword: null
   days_to_keep: 90
 schema:
   storageaccount: "str"
@@ -21,10 +16,10 @@ schema:
   repopassword: "password"
   days_to_keep: "int"
 map:
-- backup:ro
+  - backup:ro
 arch:
-- amd64
-- armv7
-- armhf
-- i386
-- aarch64
+  - amd64
+  - armv7
+  - armhf
+  - i386
+  - aarch64
