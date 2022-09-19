@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.3
+
+Add variable to allow for easier incremental updates
+
 ## 1.1.2
 
 Add timeout_value parameter and actually make it work
