@@ -5,6 +5,7 @@ description: Container to copy Hassio backups to an Azure Storage Account
 url: https://github.com/jak119/hassio-backup-azure-blob/tree/main/azure-cli
 startup: once
 image: ghcr.io/jak119/{arch}-hassio-azure-backup
+init: false
 options:
   connectionstring: ""
   containername: ""
