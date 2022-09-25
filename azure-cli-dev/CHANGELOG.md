@@ -1,10 +1,5 @@
 # Changelog
 
-## 1.1.4
-
-- [Fix S6 error](https://github.com/jak119/hassio-backup-azure-blob/issues/26)
-- Update shell for script
-
 ## 1.1.3
 
 Add variable to allow for easier incremental updates
