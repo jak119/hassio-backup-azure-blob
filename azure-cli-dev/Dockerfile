@@ -1,8 +1,6 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
-ARG CLIVersion=2.40.0
-
 ENV LANG C.UTF-8
 
 COPY requirements.txt
