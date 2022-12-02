@@ -4,7 +4,7 @@ slug: backup_azure_blob_py
 description: Dev Branch - Container to copy Hassio backups to an Azure Storage Account
 url: https://github.com/jak119/hassio-backup-azure-blob/tree/main/azure-cli-dev
 startup: once
-# image: ghcr.io/jak119/{arch}-hassio-azure-backup-py
+image: ghcr.io/jak119/{arch}-hassio-azure-backup-py
 init: false
 options:
   connectionstring: ""
