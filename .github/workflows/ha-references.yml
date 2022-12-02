@@ -24,9 +24,12 @@ jobs:
           repository: home-assistant/addons-example
           path: addons-example
           
+      # - name: Copy files into place for workflow
+      #   run: |
+      #     cp -avf ./addons-example/.github/* ./addon/.github
+
       - name: Copy files into place
         run: |
-          cp -avf ./addons-example/.github/* ./addon/.github
           cp -avf ./devcontainer/addons/devcontainer.json ./addon/.devcontainer/
           cp -avf ./devcontainer/addons/tasks.json ./addon/.vscode/
 
