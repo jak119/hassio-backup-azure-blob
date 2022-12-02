@@ -1,5 +1,5 @@
 {
-  "name": "Devcontainer for add-on repositories",
+  "name": "Example devcontainer for add-on repositories",
   "image": "ghcr.io/home-assistant/devcontainer:addons",
   "appPort": ["7123:8123", "7357:4357"],
   "postStartCommand": "bash devcontainer_bootstrap",
@@ -7,7 +7,7 @@
   "containerEnv": {
     "WORKSPACE_DIRECTORY": "${containerWorkspaceFolder}"
   },
-  "extensions": ["timonwong.shellcheck", "esbenp.prettier-vscode", "eamodio.gitlens"],
+  "extensions": ["timonwong.shellcheck", "esbenp.prettier-vscode"],
   "mounts": [ "type=volume,target=/var/lib/docker" ],
   "settings": {
     "terminal.integrated.profiles.linux": {
