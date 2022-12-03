@@ -7,7 +7,7 @@ COPY requirements.txt /tmp
 
 RUN \
   apk update && \
-  apk add --virtual=build gcc libffi-dev musl-dev openssl-dev python3-dev make cargo && \
+  apk add --virtual=build gcc libffi-dev musl-dev openssl-dev python3-dev make rust cargo && \
   pip3 install --upgrade pip && \
   pip3 --no-cache-dir install -r /tmp/requirements.txt && \
   apk del --purge build
