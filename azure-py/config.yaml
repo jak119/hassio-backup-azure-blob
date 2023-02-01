@@ -1,5 +1,5 @@
 name: Backup to Azure Blob with Python
-version: 0.0.2
+version: 0.0.3
 slug: backup_azure_blob_py
 description: Dev - Python - Container to copy Hassio backups to an Azure Storage Account
 url: https://github.com/jak119/hassio-backup-azure-blob/tree/main/azure-py
