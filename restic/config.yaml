@@ -1,6 +1,6 @@
 name: Backup to Azure Blob with Restic
 version: 0.0.2
-stage: experimental
+stage: deprecated
 slug: restic_azure
 description: Container to copy Hassio backups to an Azure Storage Account with Restic
 url: https://github.com/jak119/hassio-backup-azure-blob/tree/main/restic
