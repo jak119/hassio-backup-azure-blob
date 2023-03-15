@@ -5,7 +5,7 @@ export AZCOPY_JOB_PLAN_LOCATION=/data
 SAS="$(bashio::config 'sas_token')"
 
 params=()
-if [[ $(bashio::config 'mirror') == true ]]; then
+if [[ $(bashio::config.true 'mirror') == true ]]; then
     bashio::log.warning "Mirror mode is enabled"
     bashio::log.warning "This will cause Azcopy to DELETE blobs in the destination that are not present in /backup"
     params+=(--mirror-mode=true)
