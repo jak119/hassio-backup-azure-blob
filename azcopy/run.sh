@@ -1,10 +1,16 @@
 #!/command/with-contenv bashio
 # shellcheck disable=all
-CONTAINER="$(bashio::config 'containername')"
+SAS="$(bashio::config 'sas_token')"
+
+params=()
+if [[ $(bashio::config 'overwrite') == false ]]; then
+    params+=(--overwrite=false)
+fi
 
 bashio::log.info "Found these backups:"
 bashio::log.info "$(ls /backup/)"
 
-bashio::log azcopy --version
+bashio::log.info "Azcopy version"
+bashio::log.info "$(azcopy --version)"
 
-bashio::exit.ok
+azcopy copy /backup/* "$SAS" "${params[@]}"
