@@ -1,5 +1,7 @@
 #!/command/with-contenv bashio
 # shellcheck disable=all
+export AZCOPY_JOB_PLAN_LOCATION=/data
+
 SAS="$(bashio::config 'sas_token')"
 
 params=()
