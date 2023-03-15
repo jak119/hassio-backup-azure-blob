@@ -13,4 +13,5 @@ bashio::log.info "$(ls /backup/)"
 bashio::log.info "Azcopy version"
 bashio::log.info "$(azcopy --version)"
 
-azcopy copy /backup/* "$SAS" "${params[@]}"
+# azcopy copy "/backup/*" "$SAS" "${params[@]}"
+azcopy copy "/backup/*" "$SAS"
