@@ -10,7 +10,7 @@ options:
   sas_token: ""
   overwrite: true
 schema:
-  sas_token: password
+  sas_token: string
   overwrite: bool
 map:
   - backup:ro
