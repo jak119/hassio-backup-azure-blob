@@ -1,5 +1,5 @@
 name: Backup to Azure Blob - Azcopy
-version: 0.0.8
+version: 0.0.9
 slug: azcopy
 description: Container to copy Hassio backups to an Azure Storage Account
 url: https://github.com/jak119/hassio-backup-azcopy
@@ -8,10 +8,10 @@ startup: once
 init: false
 options:
   sas_token: ""
-  mirror: false
+  delete-destination: false
 schema:
   sas_token: url
-  mirror: "bool"
+  delete-destination: "bool"
 map:
   - backup:ro
 arch:
