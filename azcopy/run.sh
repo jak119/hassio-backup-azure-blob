@@ -17,6 +17,6 @@ params+=(--put-md5)
 
 bashio::log.info "$(azcopy --version)"
 
-set -x
 bashio::log.info "Starting Azcopy"
+set -x
 azcopy sync "/backup/*" "$SAS" "${params[@]}"
