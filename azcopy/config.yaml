@@ -10,7 +10,7 @@ options:
   sas_token: ""
 schema:
   sas_token: str
-  mirror: bool
+  mirror: bool?
 map:
   - backup:ro
 arch:
