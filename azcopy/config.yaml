@@ -9,7 +9,7 @@ init: false
 options:
   sas_token: ""
 schema:
-  sas_token: str
+  sas_token: url
   mirror: bool?
 map:
   - backup:ro
