@@ -7,11 +7,13 @@ if [[ $(bashio::config 'overwrite') == false ]]; then
     params+=(--overwrite=false)
 fi
 
-bashio::log.info "Found these backups:"
-bashio::log.info "$(ls /backup/)"
+params+=(--output-level quiet)
+params+=(--put-md5)
 
-bashio::log.info "Azcopy version"
+# bashio::log.info "Found these backups:"
+# bashio::log.info "$(ls /backup/)"
+
 bashio::log.info "$(azcopy --version)"
 
-# azcopy copy "/backup/*" "$SAS" "${params[@]}"
-azcopy copy "/backup/*" "$SAS"
+set -x
+azcopy copy "/backup/*" "$SAS" "${params[@]}"
