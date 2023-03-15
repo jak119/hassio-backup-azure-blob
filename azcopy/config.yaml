@@ -8,10 +8,9 @@ startup: once
 init: false
 options:
   sas_token: ""
-  overwrite: true
 schema:
   sas_token: str
-  overwrite: bool
+  mirror: bool
 map:
   - backup:ro
 arch:
