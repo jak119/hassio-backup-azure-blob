@@ -1,10 +1,10 @@
-name: Dev - Backup to Azure Blob
-version: 2.0.0
-slug: backup_azure_blob-dev
-description: Dev Branch - Container to copy Hassio backups to an Azure Storage Account
-url: https://github.com/jak119/hassio-backup-azure-blob/tree/main/azure-cli-dev
+name: DEV - Backup to Azure Blob
+version: 2023.03.15
+slug: backup_azure_blob_dev
+description: Container to copy Hassio backups to an Azure Storage Account
+url: https://github.com/jak119/hassio-backup-azure-blob/tree/main/azure-cli
 startup: once
-# image: ghcr.io/jak119/{arch}-hassio-azure-backup-dev
+# image: ghcr.io/jak119/{arch}-hassio-azure-backup
 init: false
 options:
   connectionstring: ""
@@ -12,6 +12,7 @@ options:
 schema:
   connectionstring: password
   containername: str
+  timeout_value: int?
 map:
   - backup:ro
 arch:
@@ -20,6 +21,5 @@ arch:
   - armhf
   - i386
   - aarch64
-# Make it clear this is not stable
 advanced: true
 stage: experimental
