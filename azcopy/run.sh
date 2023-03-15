@@ -3,7 +3,7 @@
 SAS="$(bashio::config 'sas_token')"
 
 params=()
-if [[ $(bashio::config.true 'mirror') ]]; then
+if $(bashio::config.true 'mirror'); then
     bashio::config.suggest.false 'mirror' 'This will cause backups to be deleted from Azure'
 
     params+=(--mirror-mode=true)
