@@ -1,8 +1,5 @@
 #!/command/with-contenv bashio
 # shellcheck disable=all
-export AZCOPY_JOB_PLAN_LOCATION=/data
-bashio::log.info "Detailed Azcopy logs will be stored in /config/azcopy"
-
 SAS="$(bashio::config 'sas_token')"
 
 params=()
