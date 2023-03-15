@@ -4,8 +4,8 @@ SAS="$(bashio::config 'sas_token')"
 
 params=()
 if [[ $(bashio::config.true 'mirror') ]]; then
-    bashio::log.warning "Mirror mode is enabled"
-    bashio::log.warning "This will cause Azcopy to DELETE blobs in the destination that are not present in /backup"
+    bashio::config.suggest.false 'mirror' 'This will cause backups to be deleted from Azure'
+
     params+=(--mirror-mode=true)
 fi
 
