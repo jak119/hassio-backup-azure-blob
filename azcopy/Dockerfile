@@ -20,8 +20,9 @@ FROM $BUILD_FROM as release
 ENV LANG C.UTF-8
 
 COPY --from=build /azcopy/azcopy /usr/local/bin
-WORKDIR /WORKDIR
-
+COPY run.sh /
+RUN chmod a+x /run.sh
+CMD [ "/run.sh" ]
 
 # Build arguments
 ARG BUILD_ARCH
