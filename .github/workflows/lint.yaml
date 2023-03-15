@@ -2,13 +2,12 @@ name: Lint
 
 on:
   push:
-    branches:
+    branches-ignore:
       - main
   pull_request:
     branches:
       - main
-  schedule:
-    - cron: "0 0 * * *"
+  workflow_call:
 
 jobs:
   find:
