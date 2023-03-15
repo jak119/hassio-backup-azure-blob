@@ -8,9 +8,10 @@ startup: once
 init: false
 options:
   sas_token: ""
+  mirror: false
 schema:
   sas_token: url
-  mirror: "bool?"
+  mirror: "bool"
 map:
   - backup:ro
 arch:
