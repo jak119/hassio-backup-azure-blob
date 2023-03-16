@@ -103,7 +103,7 @@ jobs:
         run: |
           echo "IMAGE: ${{ steps.check.outputs.image }}"
       - name: Build ${{ matrix.addon }} add-on
-        if: steps.check.outputs.build_arch == 'true' && steps.check.outputs.image != ''
+        if: steps.check.outputs.build_arch == 'true' && steps.check.outputs.image != 'null'
         uses: home-assistant/builder@2023.03.0
         with:
           args: |
