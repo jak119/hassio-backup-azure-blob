@@ -18,5 +18,3 @@ arch:
   - armv7
   - i386
   - aarch64
-advanced: false
-stage: stable
