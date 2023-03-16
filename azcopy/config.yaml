@@ -8,7 +8,6 @@ image: ghcr.io/jak119/{arch}-hassio-azcopy
 init: false
 options:
   sas_token: ""
-  delete: false
 schema:
   sas_token: url
   delete: "bool"
