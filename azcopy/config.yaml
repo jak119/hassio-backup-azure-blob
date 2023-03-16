@@ -10,7 +10,7 @@ options:
   sas_token: ""
 schema:
   sas_token: url
-  delete: "bool"
+  delete: "bool?"
 map:
   - backup:ro
 arch:
