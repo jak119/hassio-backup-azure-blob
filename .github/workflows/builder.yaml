@@ -99,9 +99,11 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
-
+      - name: Echo outputs
+        run: |
+          echo "IMAGE: ${{ steps.check.outputs.image }}"
       - name: Build ${{ matrix.addon }} add-on
-        if: steps.check.outputs.build_arch == 'true' && steps.check.outputs.image != null
+        if: steps.check.outputs.build_arch == 'true' && steps.check.outputs.image != ''
         uses: home-assistant/builder@2023.03.0
         with:
           args: |
