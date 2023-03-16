@@ -1,5 +1,4 @@
 #!/command/with-contenv bashio
-# shellcheck disable=all
 SAS="$(bashio::config 'sas_token')"
 
 params=()
@@ -18,7 +17,6 @@ params+=(--put-md5)
 bashio::log.info "$(azcopy --version)"
 
 bashio::log.info "Starting Azcopy"
-set -x
 azcopy sync "/backup" "$SAS" "${params[@]}"
 
 if [ $? -eq 0 ]; then
