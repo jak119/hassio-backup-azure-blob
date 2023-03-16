@@ -8,10 +8,10 @@ image: ghcr.io/jak119/{arch}-hassio-azcopy
 init: false
 options:
   sas_token: ""
-  delete-destination: false
+  delete: false
 schema:
   sas_token: url
-  delete-destination: "bool"
+  delete: "bool"
 map:
   - backup:ro
 arch:

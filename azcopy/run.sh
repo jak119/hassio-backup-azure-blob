@@ -3,8 +3,8 @@
 SAS="$(bashio::config 'sas_token')"
 
 params=()
-if $(bashio::config.true 'delete-destination'); then
-    bashio::config.suggest.false 'delete-destination' 'This will cause backups to be deleted from Azure'
+if $(bashio::config.true 'delete'); then
+    bashio::config.suggest.false 'delete' 'This will cause backups to be deleted from Azure'
 
     params+=(--delete-destination=true)
 fi
