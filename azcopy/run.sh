@@ -19,7 +19,7 @@ bashio::log.info "$(azcopy --version)"
 
 bashio::log.info "Starting Azcopy"
 set -x
-azcopy sync "/backup/*" "$SAS" "${params[@]}"
+azcopy sync "/backup" "$SAS" "${params[@]}"
 
 if [ $? -eq 0 ]; then
     bashio::log.green "Azcopy successfully completed"
