@@ -14,15 +14,15 @@ Follow these steps to get the add-on installed on your system:
 This configuration will require two items outlined below
 
 ```yaml
-connectionstring: >-
-  DefaultEndpointsProtocol=https;AccountName=sample;AccountKey=someKey==;EndpointSuffix=core.windows.net
-containername: ha-backup
+sas_token: >-
+  https://[account].blob.core.windows.net/[container]/[path/to/virtual/dir]?[SAS]
+delete: false
 ```
 
-### Option: `connectionstring` (required)
+### Option: `sas_token` (required)
 
-This is your [Connection String](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage?tabs=azure-portal#view-account-access-keys) from your Storage Account.
+This is your [SAS token](https://learn.microsoft.com/en-us/azure/cognitive-services/translator/document-translation/how-to-guides/create-sas-tokens?tabs=Containers) with read, add, create, write, delete, and list permissions.
 
-### Option: `containername` (required)
+### Option: `delete` (optional)
 
-This is the name of the container you'd like backups to be uploaded to.
+Set this option to true if you want to use the `--delete-destination` parameter on `azcopy sync`. This will cause Azure to have an exact replica of the backups on your Home Assistant instance.
