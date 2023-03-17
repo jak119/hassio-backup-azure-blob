@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.0
+
+- Deprecate add-on in favor of smaller Azcopy add on
+
 ## 1.1.4
 
 - [Fix S6 error](https://github.com/jak119/hassio-backup-azure-blob/issues/26)
