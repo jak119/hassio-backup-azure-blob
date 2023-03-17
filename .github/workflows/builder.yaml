@@ -59,7 +59,7 @@ jobs:
             echo "No add-on had any monitored files changed (${{ env.MONITORED_FILES }})";
           fi
   build:
-    needs: [init,lint]
+    needs: [init, lint]
     runs-on: ubuntu-latest
     if: needs.init.outputs.changed == 'true'
     name: Build ${{ matrix.arch }} ${{ matrix.addon }} add-on
