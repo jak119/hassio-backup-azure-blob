@@ -30,7 +30,7 @@ jobs:
           echo "Current version: ${{steps.current.outputs.result}}"
       - name: Set Update flag
         id: update
-        if: ${{steps.latest.outputs.latest}} != ${{steps.current.outputs.result}}
+        if: steps.latest.outputs.latest != steps.current.outputs.result
         run: echo "update-avail=true" >> $GITHUB_OUTPUT
 
   update:
