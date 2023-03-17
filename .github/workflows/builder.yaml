@@ -77,7 +77,8 @@ jobs:
         uses: home-assistant/actions/helpers/info@master
         with:
           path: "./${{ matrix.addon }}"
-
+      - name: Output info
+        run: echo ${{ steps.info.outputs.image }}
       - name: Check if add-on should be built
         id: check
         run: |
