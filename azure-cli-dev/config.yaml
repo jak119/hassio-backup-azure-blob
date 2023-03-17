@@ -1,5 +1,5 @@
 name: DEV - Backup to Azure Blob
-version: 2023.03.15
+version: 2023.03.16
 slug: backup_azure_blob_dev
 description: Container to copy Hassio backups to an Azure Storage Account
 url: https://github.com/jak119/hassio-backup-azure-blob/tree/main/azure-cli
@@ -22,4 +22,4 @@ arch:
   - i386
   - aarch64
 advanced: true
-stage: experimental
+stage: deprecated
