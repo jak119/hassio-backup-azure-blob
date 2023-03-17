@@ -6,7 +6,7 @@ on:
 jobs:
   check:
     runs-on: ubuntu-latest
-    name: Initialize builds
+    name: Check latest version
     outputs:
       new-version: ${{steps.latest.outputs.latest}}
       update-avail: ${{steps.update.outputs.update-avail}}
@@ -25,6 +25,10 @@ jobs:
         with:
           cmd: yq '.args.AZCOPY_VERSION' 'azcopy/build.yaml'
       - name: Compare
+        run: |
+          echo "Latest version: ${{steps.latest.outputs.latest}}"
+          echo "Current version: ${{steps.current.outputs.result}}"
+      - name: Set Update flag
         id: update
         if: ${{steps.latest.outputs.latest}} != ${{steps.current.outputs.result}}
         run: echo "update-avail=true" >> $GITHUB_OUTPUT
