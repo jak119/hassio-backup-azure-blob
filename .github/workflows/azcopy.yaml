@@ -1,0 +1,25 @@
+name: Azcopy Version
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    name: Initialize builds
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v3
+      - name: Get latest Azcopy version
+        id: latest
+        run: |
+          latest=$(curl -sLo- https://api.github.com/repos/Azure/azure-storage-azcopy/releases | jq -r '.[0].tag_name')
+          echo "Latest version: $latest"
+          echo "latest=$latest" >> $GITHUB_OUTPUT
+      - name: Get current version in add-on
+        id: current
+        uses: mikefarah/yq@master
+        with:
+          cmd: yq '.args.AZCOPY_VERSION' 'azcopy/build.yaml'
+      - name: Compare
+        run: ${{steps.latest.outputs.latest}} == ${{steps.current.outputs.result}}
