@@ -37,7 +37,7 @@ jobs:
 
   update:
     runs-on: ubuntu-latest
-    name: Initialize builds
+    name: Create a PR to update the version
     needs: check
     if: needs.check.outputs.update-avail == 'true'
     steps:
