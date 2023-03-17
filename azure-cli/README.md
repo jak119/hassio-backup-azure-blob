@@ -4,11 +4,11 @@ A Hassio Add-on that's designed to start up and copy Hassio snapshots to an Azur
 
 ## Prerequisites
 
-* Azure Storage Account
-  * Including [Connection String](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage?tabs=azure-portal#view-account-access-keys)
-  * And existing container
+- Azure Storage Account
+  - Including [Connection String](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage?tabs=azure-portal#view-account-access-keys)
+  - And existing container
 
 ## Inspired by
 
-* [rrostt/hassio-backup-s3](https://github.com/rrostt/hassio-backup-s3)
-* [matsuu/docker-azure-cli](https://github.com/matsuu/docker-azure-cli)
+- [rrostt/hassio-backup-s3](https://github.com/rrostt/hassio-backup-s3)
+- [matsuu/docker-azure-cli](https://github.com/matsuu/docker-azure-cli)

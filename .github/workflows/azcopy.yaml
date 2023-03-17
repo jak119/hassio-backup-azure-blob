@@ -3,7 +3,7 @@ name: Azcopy Version
 on:
   workflow_dispatch:
   schedule:
-    - cron:  '7 6 * * 6'
+    - cron: "7 6 * * 6"
 
 jobs:
   check:
@@ -54,5 +54,5 @@ jobs:
         with:
           commit-message: Bump to version ${{needs.check.outputs.new-version}}
           branch: azcopy/${{needs.check.outputs.new-version}}
-          title: 'Bump Azcopy version to ${{needs.check.outputs.new-version}}'
+          title: "Bump Azcopy version to ${{needs.check.outputs.new-version}}"
           draft: true
