@@ -20,7 +20,7 @@ bashio::log.info "Starting Azcopy"
 azcopy sync "/backup" "$SAS" "${params[@]}"
 
 if [ $? -eq 0 ]; then
-    bashio::log.green "Azcopy successfully completed"
+    bashio::log.info "Azcopy successfully completed"
     bashio::exit.ok
 else
     bashio::exit.nok "There was an error with Azcopy"
