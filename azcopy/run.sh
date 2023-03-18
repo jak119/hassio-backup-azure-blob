@@ -8,7 +8,7 @@ if $(bashio::config.true 'delete'); then
     params+=(--delete-destination=true)
 fi
 
-params+=(--output-level quiet)
+params+=(--output-level essential)
 params+=(--put-md5)
 
 # bashio::log.info "Found these backups:"
