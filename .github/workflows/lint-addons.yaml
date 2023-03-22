@@ -21,8 +21,6 @@ jobs:
 
   lint-hadolint:
     name: Hadolint
-    needs:
-      - information
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code from GitHub
