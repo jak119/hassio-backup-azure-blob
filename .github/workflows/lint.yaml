@@ -23,18 +23,56 @@ jobs:
         id: addons
         uses: home-assistant/actions/helpers/find-addons@master
 
-  lint:
-    name: Lint add-on ${{ matrix.path }}
-    runs-on: ubuntu-latest
+  lint_addons:
     needs: find
     strategy:
       matrix:
         path: ${{ fromJson(needs.find.outputs.addons) }}
+    uses: ./.github/workflows/lint-addons.yaml
+    with:
+      addon_path: "./${{ matrix.path }}"
+
+  lint-json:
+    name: JSON Lint
+    runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code from GitHub
         uses: actions/checkout@v3
+      - name: 🚀 Run JQ
+        run: |
+          shopt -s globstar
+          cat **/*.json | jq '.'
 
-      - name: 🚀 Run Home Assistant Add-on Lint
-        uses: frenck/action-addon-linter@v2.11
+  lint-shellcheck:
+    name: Shellcheck
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v3
+      - name: 🚀 Run Shellcheck
+        uses: ludeeus/action-shellcheck@2.0.0
+        env:
+          SHELLCHECK_OPTS: -s bash
+
+  lint-yamllint:
+    name: YAMLLint
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v3
+      - name: 🚀 Run YAMLLint
+        uses: frenck/action-yamllint@v1.4
+
+  lint-prettier:
+    name: Prettier
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v3
+      - name: 🚀 Run Prettier
+        uses: creyD/prettier_action@v4.3
         with:
-          path: "./${{ matrix.path }}"
+          prettier_options: --write **/*.{json,js,md,yaml}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
