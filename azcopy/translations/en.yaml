@@ -1,0 +1,10 @@
+configuration:
+  sas_token:
+    name: SAS Token
+    description: >-
+      An unexpired container level SAS token
+  delete:
+    name: Delete Destination
+    description: >-
+      Use the --delete-destination parameter or not 
+      (i.e., make the container an exact replica or the backups directory or not)
