@@ -47,7 +47,7 @@ jobs:
         id: current
         uses: mikefarah/yq@master
         with:
-          cmd: yq w -i 'azcopy/build.yaml' '.args.AZCOPY_VERSION' '${{needs.check.outputs.new-version}}'
+          cmd: yq -i 'azcopy/build.yaml' '.args.AZCOPY_VERSION' '${{needs.check.outputs.new-version}}'
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v4
