@@ -43,11 +43,11 @@ jobs:
     steps:
       - name: Check out the repository
         uses: actions/checkout@v3
-      - name: Get current version in add-on
+      - name: Set new version in add-on
         id: current
         uses: mikefarah/yq@master
         with:
-          cmd: yq w 'azcopy/build.yaml' '.args.AZCOPY_VERSION' '${{needs.check.outputs.new-version}}'
+          cmd: yq w -i 'azcopy/build.yaml' '.args.AZCOPY_VERSION' '${{needs.check.outputs.new-version}}'
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v4
