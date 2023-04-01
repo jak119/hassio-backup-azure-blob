@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0] - 2023-04-01
+
+### Changed
+
+- Bump Azcopy to version 10.18.0
+
 ## [1.0.0] - 2023-03-31
 
 ### Added
