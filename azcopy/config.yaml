@@ -7,10 +7,18 @@ startup: once
 image: ghcr.io/jak119/{arch}-hassio-azcopy
 init: false
 options:
-  sas_token: ""
+  auth_type: sp
+  storage_url: ""
 schema:
-  sas_token: url
+  auth_type: "list(sas|sp)"
+  storage_url: "url"
   delete: "bool?"
+  sas_token: "str?"
+  tenant_id: "str?"
+  client_id: "str?"
+  client_secret: "str?"
+
+  persist_auth_token: "bool?"
 map:
   - backup:ro
 arch:
