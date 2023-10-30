@@ -14,7 +14,7 @@ jobs:
       update-avail: ${{steps.update.outputs.update-avail}}
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Get latest Azcopy version
         id: latest
         run: |
@@ -42,7 +42,7 @@ jobs:
     if: needs.check.outputs.update-avail == 'true'
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set new version in add-on
         id: current
         uses: mikefarah/yq@master
