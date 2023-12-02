@@ -29,7 +29,7 @@ case $auth_type in
     fi ;;
 
   *)
-    bashio::exit.nok "only sas and sp (service principal) is supported for now as autht_type" ;;
+    bashio::exit.nok "only sas and sp (service principal) is supported for now as auth_type" ;;
 esac
 
 
