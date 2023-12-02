@@ -22,12 +22,14 @@ case $auth_type in
 
   sp)
     bashio::log.info "Using Service Principal"
-    [[ -z $tenant_id || -z $client_id || -z $client_secret ]] && bashio::exit.nok "tenant_id, client_id and client_secret are required for auth_type=sp"
-    logged_tenant=$(azcopy login status --tenant)
-    if [[ $? != 0 || "$logged_tenant" != "$tenant_id" ]]; then
-        export AZCOPY_SPA_CLIENT_SECRET="$client_secret"
-        azcopy login --service-principal --application-id "$client_id" --tenant-id "$tenant_id" || bashio::exit.nok "azcopy login using service-principal(sp) failed"
-    fi ;;
+    bashio::config.has_value 'tenant_id'
+    bashio::config.has_value 'client_id'
+    bashio::config.has_value 'client_secret'
+    export AZCOPY_SPA_CLIENT_SECRET="$client_secret"
+    export AZCOPY_AUTO_LOGIN_TYPE=SPN
+    export AZCOPY_SPA_APPLICATION_ID=$client_id
+    export AZCOPY_TENANT_ID=$tenant_id
+  ;;
 
   *)
     bashio::exit.nok "only sas and sp (service principal) is supported for now as auth_type" ;;
