@@ -18,9 +18,10 @@ params+=(--put-md5)
 
 case $auth_type in
   sas)
-    bashio::log.info "Using SAS token";;
+    bashio::log.info "Using SAS token. Any Service Principal values (client ID, etc) will be ignored";;
 
   sp)
+    bashio::log.info "Using Service Principal"
     [[ -z $tenant_id || -z $client_id || -z $client_secret ]] && bashio::exit.nok "tenant_id, client_id and client_secret are required for auth_type=sp"
     logged_tenant=$(azcopy login status --tenant)
     if [[ $? != 0 || "$logged_tenant" != "$tenant_id" ]]; then
