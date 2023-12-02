@@ -6,9 +6,8 @@ This configuration requires either a SAS token or a ServicePrincipal authorizati
 # Mandatory
 auth_type: "sp" # supported values: `sp` or `sas`
 storage_url: "https://[account].blob.core.windows.net/[container]/[path/to/virtual/dir]"
+# if auth_type is `sas`, include the SAS token in the URL
 delete: "false"
-# if auth_type is `sas`, only sas_token is required
-sas_token: "[SAS token]"
 # if auth_type is `sp`, token_id, client_id and client_secret are required
 tenant_id: "[tenant id]"
 client_id: "[service principal client id]"
@@ -21,10 +20,6 @@ Possible values: `sas` or `sp`
 
 `sas`: Use SAS Token for storage authentication
 `sp` : Use service principal authentication
-
-### Option: `sas_token` (required if `auth_type` is `sas`)
-
-This is your [SAS token](https://learn.microsoft.com/en-us/azure/cognitive-services/translator/document-translation/how-to-guides/create-sas-tokens?tabs=Containers) with read, add, create, write, delete, and list permissions.
 
 ### Option: `tenant_id` (required if `auth_type` is `sp`)
 
