@@ -2,7 +2,6 @@
 
 auth_type="$(bashio::config 'auth_type')"
 storage_url="$(bashio::config 'storage_url')"
-sas_token="$(bashio::config 'sas_token')"
 tenant_id="$(bashio::config 'tenant_id')"
 client_id="$(bashio::config 'client_id')"
 client_secret="$(bashio::config 'client_secret')"
@@ -19,8 +18,7 @@ params+=(--put-md5)
 
 case $auth_type in
   sas)
-    [[ -z $sas_token ]] && bashio::exit.nok "sas_token was empty for auth_type=sas"
-    storage_url="${storage_url}?$sas_token" ;;
+    bashio::log.info "Using SAS token";;
 
   sp)
     [[ -z $tenant_id || -z $client_id || -z $client_secret ]] && bashio::exit.nok "tenant_id, client_id and client_secret are required for auth_type=sp"

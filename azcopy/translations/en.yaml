@@ -1,8 +1,4 @@
 configuration:
-  sas_token:
-    name: SAS Token
-    description: >-
-      An unexpired container level SAS token
   delete:
     name: Delete Destination
     description: >-
@@ -14,8 +10,10 @@ configuration:
       Select SP to use a Service Principal and supply the Tenant ID, Client ID, and Client Secret
       Select SAS and supply only the SAS token value
   storage_url:
-    name: >-
-      Storage Account and container URL e.g.,https://[myaccount].blob.core.windows.net/[container]
+    name: Storage Account URL
+    description: >-
+      Storage Account and container URL e.g., https://[myaccount].blob.core.windows.net/[container]
+      If using a SAS token enter the include the full SAS token URL e.g., https://[myaccount].blob.core.windows.net/[container]?[token]
   tenant_id:
     name: "SP: Tenant ID"
   client_id:
