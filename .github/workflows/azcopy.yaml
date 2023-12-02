@@ -56,3 +56,4 @@ jobs:
           branch: azcopy/${{needs.check.outputs.new-version}}
           title: "Bump Azcopy version to ${{needs.check.outputs.new-version}}"
           draft: true
+          labels: azcopy-version
