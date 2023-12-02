@@ -17,8 +17,6 @@ schema:
   tenant_id: "str?"
   client_id: "str?"
   client_secret: "str?"
-
-  persist_auth_token: "bool?"
 map:
   - backup:ro
 arch:
