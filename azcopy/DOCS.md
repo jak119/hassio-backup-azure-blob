@@ -1,16 +1,37 @@
 # Backup to Azure Blob Documentation
 
-This configuration will require two items outlined below
+This configuration requires either a SAS token or a ServicePrincipal authorization. The configuration items are outlined below
 
 ```yaml
-sas_token: >-
-  https://[account].blob.core.windows.net/[container]/[path/to/virtual/dir]?[SAS]
-delete: false
+# Mandatory
+auth_type: "sp" # supported values: `sp` or `sas`
+storage_url: "https://[account].blob.core.windows.net/[container]/[path/to/virtual/dir]"
+# if auth_type is `sas`, include the SAS token in the URL
+delete: "false"
+# if auth_type is `sp`, token_id, client_id and client_secret are required
+tenant_id: "[tenant id]"
+client_id: "[service principal client id]"
+client_secret: "[client secret]"
 ```
 
-### Option: `sas_token` (required)
+### Option: `auth_token` (required)
 
-This is your [SAS token](https://learn.microsoft.com/en-us/azure/cognitive-services/translator/document-translation/how-to-guides/create-sas-tokens?tabs=Containers) with read, add, create, write, delete, and list permissions.
+Possible values: `sas` or `sp`
+
+`sas`: Use SAS Token for storage authentication
+`sp` : Use service principal authentication
+
+### Option: `tenant_id` (required if `auth_type` is `sp`)
+
+Tenant ID for service principal (`sp`) type auth.
+
+### Option: `client_id` (required if `auth_type` is `sp`)
+
+Service principal ID for service principal (`sp`) type auth.
+
+### Option: `client_secret` (required if `auth_type` is `sp`)
+
+Service principal secret for service principal (`sp`) type auth.
 
 ### Option: `delete` (optional)
 

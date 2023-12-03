@@ -1,10 +1,22 @@
 configuration:
-  sas_token:
-    name: SAS Token
-    description: >-
-      An unexpired container level SAS token
   delete:
     name: Delete Destination
     description: >-
-      Use the --delete-destination parameter or not 
+      Use the --delete-destination parameter or not
       (i.e., make the container an exact replica or the backups directory or not)
+  auth_type:
+    name: Auth Type
+    description: >-
+      Select SP to use a Service Principal and supply the Tenant ID, Client ID, and Client Secret
+      Select SAS and supply only the SAS token value
+  storage_url:
+    name: Storage Account URL
+    description: >-
+      Storage Account and container URL e.g., https://[myaccount].blob.core.windows.net/[container]
+      If using a SAS token enter the include the full SAS token URL e.g., https://[myaccount].blob.core.windows.net/[container]?[token]
+  tenant_id:
+    name: "SP: Tenant ID"
+  client_id:
+    name: "SP: Client ID"
+  client_secret:
+    name: "SP: Client Secret"
