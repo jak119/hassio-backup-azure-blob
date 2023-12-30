@@ -70,5 +70,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.0] - 2023-03-15
 
 Initial release
-[Unreleased]: https://github.com/jak119/hassio-backup-azure-blob/compare/v2.0.2..HEAD
-[2.0.2]: https://github.com/jak119/hassio-backup-azure-blob/compare/v2.0.1..v2.0.2
