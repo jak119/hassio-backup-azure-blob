@@ -58,7 +58,7 @@ jobs:
         uses: christian-draeger/increment-semantic-version@1.1.0
         with:
           current-version: ${{ steps.current_addon_version.outputs.result }}
-          version-fragment: 'bug'
+          version-fragment: "bug"
       - name: Display new version
         run: echo ${{ steps.bump_version.outputs.next-version }}
       - name: Set new add-on version
