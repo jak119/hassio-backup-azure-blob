@@ -21,7 +21,7 @@ jobs:
           latest=$(curl -sLo- https://api.github.com/repos/Azure/azure-storage-azcopy/releases | jq -r '.[0].tag_name')
           echo "Latest version: $latest"
           echo "latest=$latest" >> $GITHUB_OUTPUT
-      - name: Get current version in add-on
+      - name: Get current version of Azcopy in add-on
         id: current
         uses: mikefarah/yq@master
         with:
@@ -43,11 +43,41 @@ jobs:
     steps:
       - name: Check out the repository
         uses: actions/checkout@v4
-      - name: Set new version in add-on
+      - name: Set new azcopy version in add-on build variables
         id: current
         uses: mikefarah/yq@master
         with:
           cmd: yq -i '.args.AZCOPY_VERSION = "${{needs.check.outputs.new-version}}"' 'azcopy/build.yaml'
+      - name: Get current version of add-on
+        id: current_addon_version
+        uses: mikefarah/yq@master
+        with:
+          cmd: yq '.version' 'azcopy/config.yaml'
+      - name: Bump add-on release version
+        id: bump_version
+        uses: christian-draeger/increment-semantic-version@1.1.0
+        with:
+          current-version: ${{ steps.current_addon_version.outputs.result }}
+          version-fragment: "bug"
+      - name: Display new version
+        run: echo ${{ steps.bump_version.outputs.next-version }}
+      - name: Set new add-on version
+        uses: mikefarah/yq@master
+        with:
+          cmd: yq -i '.version = "${{steps.bump_version.outputs.next-version}}"' 'azcopy/config.yaml'
+      - name: Add Change
+        uses: natescherer/changelog-management-action@v1
+        with:
+          mode: addchange
+          changeType: changed
+          changeValue: Bump Azcopy to version ${{needs.check.outputs.new-version}}
+          path: azcopy/CHANGELOG.md
+      - name: Update Changelog for Release
+        uses: natescherer/changelog-management-action@v1
+        with:
+          mode: release
+          releaseVersion: ${{steps.bump_version.outputs.next-version}}
+          path: azcopy/CHANGELOG.md
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v5
