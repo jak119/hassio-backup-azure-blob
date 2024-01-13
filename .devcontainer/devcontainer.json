@@ -10,7 +10,8 @@
   "extensions": [
     "timonwong.shellcheck",
     "esbenp.prettier-vscode",
-    "eamodio.gitlens"
+    "eamodio.gitlens",
+    "ms-azuretools.vscode-docker"
   ],
   "mounts": ["type=volume,target=/var/lib/docker"],
   "settings": {

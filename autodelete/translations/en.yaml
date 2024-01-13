@@ -1,0 +1,4 @@
+configuration:
+  daystokeep:
+    name: Days to Keep
+    description: Number of days of backups to keep
