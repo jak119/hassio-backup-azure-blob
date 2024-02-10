@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.3] - 2024-02-10
+### Changed
+- Bump Azcopy to version v10.23.0
+
 ## [2.0.2] - 2023-12-30
 
 ### Changed
@@ -72,3 +76,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.0] - 2023-03-15
 
 Initial release
+[Unreleased]: https://github.com/jak119/hassio-backup-azure-blob/compare/v2.0.3..HEAD
+[2.0.3]: https://github.com/jak119/hassio-backup-azure-blob/compare/v2.0.2..v2.0.3
