@@ -80,7 +80,7 @@ jobs:
           path: azcopy/CHANGELOG.md
       - name: Create Pull Request
         id: cpr
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v6
         with:
           commit-message: Bump to version ${{needs.check.outputs.new-version}}
           branch: azcopy/${{needs.check.outputs.new-version}}
