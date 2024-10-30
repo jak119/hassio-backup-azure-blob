@@ -1,6 +1,6 @@
 # Adapted from https://github.com/PeterDaveHello/docker-azcopy
 ARG AZCOPY_VERSION
-ARG GO_VERSION=1.18
+ARG GO_VERSION=1.23
 ARG ALPINE_VERSION
 ARG BUILD_ARCH
 ARG BUILD_FROM
@@ -11,8 +11,8 @@ WORKDIR /azcopy
 ARG AZCOPY_VERSION
 RUN wget -q "https://github.com/Azure/azure-storage-azcopy/archive/$AZCOPY_VERSION.tar.gz" -O src.tgz
 RUN tar xf src.tgz --strip 1 \
- && go build -o azcopy \
- && ./azcopy --version
+    && go build -o azcopy \
+    && ./azcopy --version
 
 # Build image from Hassio base image
 FROM ${BUILD_FROM}:${ALPINE_VERSION} as release
