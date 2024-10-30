@@ -4,5 +4,5 @@ build_from:
   armv7: ghcr.io/home-assistant/armv7-base
   i386: ghcr.io/home-assistant/i386-base
 args:
-  AZCOPY_VERSION: "v10.22.1"
+  AZCOPY_VERSION: "v10.26.0"
   ALPINE_VERSION: "3.16"
