@@ -1,0 +1,6 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Home Assistant Add-on: Azure Backup
+# ==============================================================================
+bashio::log.info "Starting backup script..."
+exec python3 /opt/azure_backup/backup.py

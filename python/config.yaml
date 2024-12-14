@@ -1,0 +1,31 @@
+name: "Azure Backup with Python"
+version: "0.0.1"
+slug: "python_azure_backup_sync"
+description: "Sync Home Assistant backups to Azure Blob Storage using smaller Python add-on"
+url: "https://github.com/jak119/hassio-backup-azure-blob/tree/main/python"
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+startup: application
+boot: auto
+options:
+  storage_account: ""
+  container_name: "habackups"
+  delete_after_upload: false
+  # Either use SAS token
+  sas_token: ""
+  # Or use service principal credentials
+  tenant_id: ""
+  client_id: ""
+  client_secret: ""
+schema:
+  storage_account: str
+  container_name: str
+  delete_after_upload: bool
+  sas_token: str?
+  tenant_id: str?
+  client_id: str?
+  client_secret: str?
