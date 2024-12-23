@@ -55,7 +55,7 @@ jobs:
           cmd: yq '.version' 'azcopy/config.yaml'
       - name: Bump add-on release version
         id: bump_version
-        uses: christian-draeger/increment-semantic-version@1.1.0
+        uses: christian-draeger/increment-semantic-version@1.2.3
         with:
           current-version: ${{ steps.current_addon_version.outputs.result }}
           version-fragment: "bug"
